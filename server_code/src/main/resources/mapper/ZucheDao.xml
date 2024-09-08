@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.ZucheDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.ZucheEntity" id="zucheMap">
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="leixing" column="leixing"/>
+        <result property="guige" column="guige"/>
+        <result property="jiage" column="jiage"/>
+        <result property="quchedidian" column="quchedidian"/>
+        <result property="zuchekaishishijian" column="zuchekaishishijian"/>
+        <result property="zuchejieshushijian" column="zuchejieshushijian"/>
+        <result property="zuchetianshu" column="zuchetianshu"/>
+        <result property="zongjia" column="zongjia"/>
+        <result property="cheliangtupian" column="cheliangtupian"/>
+        <result property="ispay" column="ispay"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.ZucheView" >
+
+		SELECT  zuche.* FROM zuche  zuche 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.ZucheView" >
+		SELECT * FROM zuche  zuche <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

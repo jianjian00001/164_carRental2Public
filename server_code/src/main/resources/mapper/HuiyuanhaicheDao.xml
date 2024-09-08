@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.HuiyuanhaicheDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.HuiyuanhaicheEntity" id="huiyuanhaicheMap">
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="leixing" column="leixing"/>
+        <result property="guige" column="guige"/>
+        <result property="jiage" column="jiage"/>
+        <result property="quchedidian" column="quchedidian"/>
+        <result property="zuchekaishishijian" column="zuchekaishishijian"/>
+        <result property="zuchejieshushijian" column="zuchejieshushijian"/>
+        <result property="zucheshizhang" column="zucheshizhang"/>
+        <result property="zongjia" column="zongjia"/>
+        <result property="cheliangtupian" column="cheliangtupian"/>
+        <result property="huiyuanzhanghao" column="huiyuanzhanghao"/>
+        <result property="huiyuanxingming" column="huiyuanxingming"/>
+        <result property="huiyuanshouji" column="huiyuanshouji"/>
+        <result property="huiyuanshenfenzheng" column="huiyuanshenfenzheng"/>
+        <result property="haichedidian" column="haichedidian"/>
+        <result property="yidihaichedidian" column="yidihaichedidian"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.HuiyuanhaicheView" >
+
+		SELECT  huiyuanhaiche.* FROM huiyuanhaiche  huiyuanhaiche 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.HuiyuanhaicheView" >
+		SELECT * FROM huiyuanhaiche  huiyuanhaiche <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

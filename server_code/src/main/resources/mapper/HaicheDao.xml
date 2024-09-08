@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.HaicheDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.HaicheEntity" id="haicheMap">
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="leixing" column="leixing"/>
+        <result property="guige" column="guige"/>
+        <result property="jiage" column="jiage"/>
+        <result property="quchedidian" column="quchedidian"/>
+        <result property="zucheshizhang" column="zucheshizhang"/>
+        <result property="zongjia" column="zongjia"/>
+        <result property="cheliangtupian" column="cheliangtupian"/>
+        <result property="haichedidian" column="haichedidian"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.HaicheView" >
+
+		SELECT  haiche.* FROM haiche  haiche 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.HaicheView" >
+		SELECT * FROM haiche  haiche <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

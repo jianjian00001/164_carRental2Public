@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.CheliangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.CheliangEntity" id="cheliangMap">
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="leixing" column="leixing"/>
+        <result property="jiage" column="jiage"/>
+        <result property="guige" column="guige"/>
+        <result property="cheliangxiangqing" column="cheliangxiangqing"/>
+        <result property="cheliangtupian" column="cheliangtupian"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.CheliangView" >
+
+		SELECT  cheliang.* FROM cheliang  cheliang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.CheliangView" >
+		SELECT * FROM cheliang  cheliang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
